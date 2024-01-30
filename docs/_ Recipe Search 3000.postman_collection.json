@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "f90beed2-5e9d-4d75-93d3-1d478bcb4ffb",
+		"name": "_ Recipe Search 3000",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15928647"
+	},
+	"item": [
+		{
+			"name": "api/recipes",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

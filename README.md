@@ -1,3 +1,9 @@
+## Seeding database
+This command will generate 50 recipes
+`sail artisan db:seed --class=RecipeSeeder`
+
+See `docs` directory for mockup and Postman Collection
+
 ## Getting started
 
 ### Pre-requisites
