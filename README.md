@@ -1,5 +1,5 @@
 ## Seeding database
-This command will generate 50 recipes
+This command will generate 50 recipes. You can run this after kickstarting the app using the instructions below.
 `sail artisan db:seed --class=RecipeSeeder`
 
 See `docs` directory for mockup and Postman Collection
@@ -13,9 +13,9 @@ See `docs` directory for mockup and Postman Collection
 - docker-compose
 
 ### Check out this repository
-`git clone git@github.com:wildalaskan/skeleton-app.git`
+`git@github.com:kchapple/recipe-search-3000.git`
 
-`cd skeleton-app`
+`recipe-search-3000`
 
 ### Run composer to kickstart laravel sail
 
