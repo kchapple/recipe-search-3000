@@ -20,9 +20,12 @@ class RecipeFactory extends Factory
 
     public function definition()
     {
+        $name = $this->faker->country() . ' ' . $this->faker->name;
         return [
-            'name' => $this->faker->sentence,
+            'name' => $name,
+            'description' => $this->faker->sentence,
             'author_email' => $this->faker->email,
+            'slug' => \Str::slug($name),
         ];
     }
 

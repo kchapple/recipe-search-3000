@@ -27,14 +27,13 @@ class RecipeControllerTest extends TestCase
                 ],
             ],
             'meta' => [
-                'pagination' => [
-                    'total',
-                    'per_page',
-                    'current_page',
-                    'last_page',
-                    'from',
-                    'to',
-                ],
+                'total',
+                'per_page',
+                'current_page',
+                'last_page',
+                'from',
+                'to',
+                'links',
             ],
         ]);
     }

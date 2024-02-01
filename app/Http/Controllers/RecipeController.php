@@ -12,18 +12,42 @@ class RecipeController extends Controller
     public function index(Request $request)
     {
         $perPage = $request->input('per_page', 10);
-        $query = $request->input('query');
-        if ($query) {
-            $recipes = Recipe::search($query)->paginate($perPage);
-        } else {
-            $recipes = Recipe::paginate($perPage);
+        $authorEmail = $request->input('author_email');
+        $keyword = $request->input('keyword');
+        $ingredient = $request->input('ingredient');
+
+        $recipes = Recipe::query();
+
+        if ($authorEmail) {
+            $recipes->where('author_email', $authorEmail);
         }
+
+        if ($keyword) {
+            $recipes->where(function ($query) use ($keyword) {
+                $query->where('name', 'like', '%' . $keyword . '%')
+                    ->orWhere('description', 'like', '%' . $keyword . '%')
+                    ->orWhereHas('ingredients', function ($subQuery) use ($keyword) {
+                        $subQuery->where('name', 'like', '%' . $keyword . '%');
+                    })
+                    ->orWhereHas('steps', function ($subQuery) use ($keyword) {
+                        $subQuery->where('description', 'like', '%' . $keyword . '%');
+                    });
+            });
+        }
+
+        if ($ingredient) {
+            $recipes->whereHas('ingredients', function ($query) use ($ingredient) {
+                $query->where('name', 'like', '%' . $ingredient . '%');
+            });
+        }
+
+        $recipes = $recipes->paginate($perPage);
+
         return new RecipeCollection($recipes);
     }
 
-    public function show($id)
+    public function show(Recipe $recipe)
     {
-        $recipe = Recipe::findOrFail($id);
-        return new RecipeResource($recipe);
+        return new RecipeResource($recipe, true, true);
     }
 }

@@ -15,6 +15,11 @@ class Recipe extends Model
 
     protected $fillable = ['name', 'author_email'];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function toSearchableArray(): array
     {
         return [
