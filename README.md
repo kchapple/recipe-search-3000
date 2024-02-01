@@ -4,6 +4,8 @@ This command will generate 50 recipes
 
 See `docs` directory for mockup and Postman Collection
 
+![Mockup](docs/Recipe-Search-3000-Mockup.png?raw=true "Mockup")
+
 ## Getting started
 
 ### Pre-requisites

@@ -7,10 +7,50 @@
 	},
 	"item": [
 		{
-			"name": "api/recipes",
+			"name": "All Recipes",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "author_email",
+							"value": "winnifred.spencer@parker.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/api/recipes/djibouti-kirk-kautzer-iii",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"recipes",
+						"djibouti-kirk-kautzer-iii"
+					]
+				}
 			},
 			"response": []
 		}
